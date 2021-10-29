@@ -1,9 +1,12 @@
 function reverseString(str) {
-  // type your code here
+  let reversed = ""
+  for(let i = str.length - 1; i > -1; i--) {
+    reversed = reversed + str[i]
+  }
+  return reversed
 }
 
 if (require.main === module) {
-  // add your own tests in here
   console.log("Expecting: 'ih'");
   console.log("=>", reverseString("hi"));
 
@@ -15,5 +18,13 @@ if (require.main === module) {
 
 module.exports = reverseString;
 
-// Please add your pseudocode to this file
-// And a written explanation of your solution
+// pseudocode
+// Initialize a variable called reversed with an empty string
+// iterate over the string backwards 
+  // and add each character to the end of reversed
+// return reversed
+
+// explanation
+// Initialize a variable called reversed with an empty string
+// iterate over the string backwards and add each character to the end of reversed
+
