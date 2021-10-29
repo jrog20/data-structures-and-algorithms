@@ -26,17 +26,21 @@ end
 
 # Given an Array, find the first duplicate value that occurs. If there are no duplicates, return -1.
 
-# Please add your pseudocode to this file
+# pseudocode
+# ******************************************
 # initiate a new Set
 # iterate over the array 
   # return the element if the element exists in the set
   # else add the element to the set
 # return -1 if no duplicate is found
+# ******************************************
 
-# And a written explanation of your solution
+# written explanation of solution
+# ******************************************
 # A Set is a data structure the contains only unique values
 # if I iterate over the array and check if each value is in the Set,
 # I can return the first value that exists in the set because that is 
 # the first duplicate value.
 # If I get to the end of the array and have not found a duplicate,
 # return -1.
+# ******************************************
