@@ -1,5 +1,9 @@
 def reverse_string(str)
-  # type your code in here
+  reversed = ""
+  str.chars.each do |char|
+    reversed = char + reversed
+  end
+  reversed
 end
 
 if __FILE__ == $PROGRAM_NAME
@@ -10,9 +14,15 @@ if __FILE__ == $PROGRAM_NAME
 
   puts "Expecting: 'ybabtac'"
   puts "=>", reverse_string('catbaby')
-
-  # Don't forget to add your own!
 end
 
 # Please add your pseudocode to this file
+# initialize reversed as an empty string
+# iterate over each character in the string:
+  # input the character in front of the previous characters and store in reversed
+# return reversed
+
 # And a written explanation of your solution
+# initialize a variable as an empty string. 
+# iterate over the string, adding each character in front
+# of the previous character.
