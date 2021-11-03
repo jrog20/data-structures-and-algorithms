@@ -1,9 +1,17 @@
 function findShortestString(arr) {
-  // type your code here
+  // let shortest = arr[0];
+  // arr.forEach(string => {
+  //   if (string.length < shortest.length) {
+  //     shortest = string;
+  //   }
+  // });
+  // return shortest;
+
+  return arr.reduce((shortest, string) => 
+    string.length < shortest.length ? string : shortest);
 }
 
 if (require.main === module) {
-  // add your own tests in here
   console.log("Expecting: 'a'");
   console.log("=>", findShortestString(['aaa', 'a', 'bb', 'ccc']));
 
@@ -16,11 +24,24 @@ if (require.main === module) {
 
   console.log("Expecting: 'lily'");
   console.log("=>", findShortestString(['flower', 'juniper', 'lily', 'dadelion']));
-
-  // BENCHMARK HERE
 }
 
 module.exports = findShortestString;
 
-// Please add your pseudocode to this file
-// And a written explanation of your solution
+// # The problem:
+// # Given an Array of strings, return the shortest string. 
+// # If there is more than one string of that length, 
+// # return the string that comes first in the list. 
+// # The Array will have a minimum length of 1.
+
+// # pseudocode:
+// # shortest = first string
+// # iterate over the array of strings
+//   # if the current string is < shortest
+//   # shortest = current string
+// # return shortest
+
+// # explanation:
+// # If we store the first string in a variable, we can then
+// # compare each subsequent string length to the first. If it is shorter,
+// # we can replace the variable with the new shortest string.
