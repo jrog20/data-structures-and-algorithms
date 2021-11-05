@@ -1,13 +1,13 @@
-def find_shortest_string(arr)
-  # shortest = arr[0]
-  # arr.each do |string|
+def find_shortest_string(array)
+  # shortest = array[0]
+  # array.each do |string|
   #   if string.length < shortest.length
   #     shortest = string
   #   end
   # end
   # return shortest
 
-  arr.reduce do |shortest, string| 
+  array.reduce do |shortest, string| 
     string.length < shortest.length ? string : shortest
   end
 end

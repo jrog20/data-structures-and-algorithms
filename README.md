@@ -89,11 +89,11 @@ the pairing exercises together and give feedback.
 - [x] [Day 2: Find First Duplicate](./01-week-1--starter-algorithms/01-day-2--find-first-duplicate)
 - [x] [Day 3: Fibonacci Series](./01-week-1--starter-algorithms/02-day-3--fibonacci-series)
 - [x] [Day 4: Selection Sort](./01-week-1--starter-algorithms/03-day-4--selection-sort)
-- [ ] [Day 5: Find Shortest String](./01-week-1--starter-algorithms/04-day-5--find-shortest-string)
+- [x] [Day 5: Find Shortest String](./01-week-1--starter-algorithms/04-day-5--find-shortest-string)
 
 ### Week 2: Recursion
 
-- [ ] [Introduction to Recursion](./02-week-2--recursion/00-introduction-to-recursion)
+- [x] [Introduction to Recursion](./02-week-2--recursion/00-introduction-to-recursion)
 - [ ] [Day 1: Recursive Counting](./02-week-2--recursion/01-day-1--recursive-counting)
 - [ ] [Day 2: Recursive Search](./02-week-2--recursion/02-day-2--recursive-search)
 - [ ] [Day 3: Recursive Fibonacci Series](./02-week-2--recursion/03-day-3--recursive-fibonacci-series)
