@@ -1,5 +1,8 @@
 function recursiveCount(num = 0) {
-  // type your code here
+  if (num >= 10) {
+    return;
+  }
+  recursiveCount(num + 1);
 }
 
 if (require.main === module) {
@@ -8,6 +11,13 @@ if (require.main === module) {
 
 module.exports = recursiveCount;
 
-// OPTIONAL
-// Please add your pseudocode to this file
-// And a written explanation of your solution
+// # Problem: 
+// # Change this while loop into a recursive method
+// # The method should print numbers 0-9.
+
+// let count = 0;
+
+// while (count < 10) {
+//   console.log(count);
+//   ++count;
+// }

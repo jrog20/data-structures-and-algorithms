@@ -22,6 +22,6 @@ if (require.main === module) {
 
 module.exports = recursiveCount;
 
-// OPTIONAL
-// Please add your pseudocode to this file
-// And a written explanation of your solution
+// # Problem: 
+// # Change this while loop into a recursive method
+// # The method should print numbers 0-9.
