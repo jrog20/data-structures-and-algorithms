@@ -102,7 +102,7 @@ the pairing exercises together and give feedback.
 
 ### Week 3: Additional Practice
 
-- [ ] [Bonus 1: Balancing Parentheses](./03-week-3--additional-practice/00-bonus-1--balancing-parenetheses)
+- [x] [Bonus 1: Balancing Parentheses](./03-week-3--additional-practice/00-bonus-1--balancing-parenetheses)
 - [ ] [Bonus 2: Roman Numeral to Integer](./03-week-3--additional-practice/01-bonus-2--roman-numeral-to-integer)
 - [ ] [Bonus 3: Rotate Array Clockwise](./03-week-3--additional-practice/02-bonus-3--rotate-array-clockwise)
 - [ ] [Bonus 4: Distinct Pair Sum](./03-week-3--additional-practice/03-bonus-4--distinct-pair-sum)
