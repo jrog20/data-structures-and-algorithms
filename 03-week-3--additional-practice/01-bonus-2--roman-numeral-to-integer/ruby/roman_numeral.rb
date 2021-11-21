@@ -19,10 +19,10 @@ def roman_numeral(string)
   idx = 0
 
   while idx < string.length
-    twoChar = (string[idx] + (string[idx + 1] || '')).to_sym
+    two_char = (string[idx] + (string[idx + 1] || '')).to_sym
 
-    if !romans[twoChar].nil?
-      total += romans[twoChar]
+    if !romans[two_char].nil?
+      total += romans[two_char]
       idx += 2
     else
       total += romans[string[idx].to_sym]
