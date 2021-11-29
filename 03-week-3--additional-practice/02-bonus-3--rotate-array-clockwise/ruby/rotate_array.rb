@@ -43,12 +43,12 @@ end
 # ```
 
 # explanation
- # We can solve this problem by figuring out how many elements to remove from the end
- # of the array, and then adding those removed elements to the front of the array. 
- # We need to account for when k is the same or larger than the array's length.
- # We can do this by getting the remainder of k / the array length.
+#  We can solve this problem by figuring out how many elements to remove from the end
+#  of the array, and then adding those removed elements to the front of the array. 
+#  We need to account for when k is the same or larger than the array's length.
+#  We can do this by getting the remainder of k / the array length.
 
 # pseudocode
- # initialize rotations to store the remainder of k / array length
- # remove rotations number elements from end of array
- # return removed elements + remaining elements
+#  initialize rotations to store the remainder of k / array length
+#  remove rotations number elements from end of array
+#  return removed elements + remaining elements
