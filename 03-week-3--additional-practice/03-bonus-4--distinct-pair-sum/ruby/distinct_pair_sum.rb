@@ -28,19 +28,19 @@ end
 
 # pseudocode 
 # initialize empty hash called pairs
- # 
- # iterate over array up to second to last item:
- #  if current item and next item are not keys in pairs and they sum to k:
- #    add current item as key in pairs with value of [current item, next item]
- # 
- # return values stored in pairs
+ 
+#  iterate over array up to second to last item:
+#   if current item and next item are not keys in pairs and they sum to k:
+#     add current item as key in pairs with value of [current item, next item]
+ 
+#  return values stored in pairs
 
 # explanation of solution
- # Objects only allow keys with unique values. If we iterate over the array, and on 
- # each iteration, check if the current value and next value add up to k, we can then
- # check if either of those values is a key in pairs. If neither is a key in pairs, we
- # add the current element being iterated over as the key and the pair as the value. 
- # When the iteration is over, we return the values from pairs.
+#  Objects only allow keys with unique values. If we iterate over the array, and on 
+#  each iteration, check if the current value and next value add up to k, we can then
+#  check if either of those values is a key in pairs. If neither is a key in pairs, we
+#  add the current element being iterated over as the key and the pair as the value. 
+#  When the iteration is over, we return the values from pairs.
 
 # the problem: Distinct Pair Sum
 # Given an input Array and a target value `k`, 
