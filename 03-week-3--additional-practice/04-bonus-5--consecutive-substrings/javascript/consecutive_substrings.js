@@ -13,7 +13,7 @@ function consecutiveSubstrings(string) {
     });
   });
 
-  return substring;
+  return substring; 
 }
 
 if (require.main === module) {
