@@ -43,7 +43,7 @@ end
 # until we reach the end of the string. We then start this process again, at the next index.
 
 # pseudocode
-###########################
+# ##########################
 # initialize an empty array called substrings
 # iterate over the string:
 #   push character onto substrings
@@ -53,5 +53,5 @@ end
 #     add character to fragment
 #     push fragment onto substring
 # return substring
-###########################
+# ##########################
 
