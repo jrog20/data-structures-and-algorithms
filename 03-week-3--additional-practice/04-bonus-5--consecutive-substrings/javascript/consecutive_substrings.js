@@ -24,6 +24,16 @@ if (require.main === module) {
 
   console.log("Expecting: ['a']");
   console.log("=>", consecutiveSubstrings('a'));
+
+  console.log("");
+
+  console.log("Expecting: ['j', 'ja', 'jai', 'jaim', 'jaime', 'a', 'ai', 'aim', 'aime', 'i', 'im', 'ime', 'm', 'me', 'e']");
+  console.log("=>", consecutiveSubstrings('jaime'));
+
+  console.log("");
+
+  console.log("Expecting: ['s', 'su', 'sun', 'u', 'un', 'n']");
+  console.log("=>", consecutiveSubstrings('sun'));
 }
 
 module.exports = consecutiveSubstrings;
