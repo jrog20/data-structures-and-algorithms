@@ -11,26 +11,33 @@ class Stack
   # add item to top of stack if not full
   # if full, throw error
   def push(item)
+    raise "Stack is full" if isFull?
+    @stack.push(item)
   end
 
   # remove item from top of stack and return it
   def pop
+    @stack.pop
   end
 
   # return item at top of stack without removing it
   def peek
+    @stack.last
   end
 
   # return true if stack is empty, otherwise false
   def isEmpty?
+    size.zero?
   end
 
   # return true if stack is full, otherwise false
   def isFull?
+    size === @limit
   end
 
   # return number of items in stack
   def size
+    @stack.length
   end
 
   # return -1 if item not in stack, otherwise integer representing 
