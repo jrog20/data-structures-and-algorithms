@@ -3,8 +3,7 @@ class Stack
 
   def initialize
     @stack = []
-    # this is an arbitrary value to make testing easier
-    # 1,024 would be way too high to test!
+    # this is an arbitrary (low) value to make testing easier
     @limit = 10
   end
 
@@ -40,17 +39,35 @@ class Stack
     @stack.length
   end
 
-  # return -1 if item not in stack, otherwise integer representing 
-  # how far it is from the top
+  # return -1 if item not in stack, 
+  # otherwise integer representing how far it is from the top (array length - index -1)
   def search(target)
+    @stack.each_with_index do |item, idx|
+      return size - idx - 1 if item === target
+    end
+    return -1
   end
 
   # print contents of stack: do not return the stack itself!
   def print
+    puts @stack.join('-')
   end
+
 end
 
 if __FILE__ == $PROGRAM_NAME
-  # Don't forget to add your tests!
+  stack = Stack.new;
+ 
+  (0...6).each do |num|
+    stack.push(num)
+  end
+
+  puts "size: #{stack.size}"
+  puts "is empty?: #{stack.isEmpty?}"
+  puts "is full?: #{stack.isFull?}"
+  puts "find 3: #{stack.search(3)}"
+  puts "peek: #{stack.peek}"
+
+  stack.print
 end
 
