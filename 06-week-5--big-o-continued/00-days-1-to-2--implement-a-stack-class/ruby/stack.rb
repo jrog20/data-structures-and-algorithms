@@ -56,7 +56,7 @@ class Stack
 end
 
 if __FILE__ == $PROGRAM_NAME
-  stack = Stack.new;
+  stack = Stack.new
  
   (0...6).each do |num|
     stack.push(num)

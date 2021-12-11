@@ -110,23 +110,23 @@ the pairing exercises together and give feedback.
 
 ### Pairing Exercises 1
 
-- [ ] [Code Review](./04-pairing-exercises-1/00-code-review)
+- [x] [Code Review](./04-pairing-exercises-1/00-code-review)
 - [ ] [Whiteboard](./04-pairing-exercises-1/01-whiteboard)
 
 ### Week 4: Big O Notation
 
-- [ ] [Day 1: Introduction to Big O Notation](./05-week-4--big-o-notation/00-day-1--introduction-to-big-o-notation)
-- [ ] [Day 2: Introduction to Space Complexity](./05-week-4--big-o-notation/01-day-2--introduction-to-space-complexity)
+- [x] [Day 1: Introduction to Big O Notation](./05-week-4--big-o-notation/00-day-1--introduction-to-big-o-notation)
+- [x] [Day 2: Introduction to Space Complexity](./05-week-4--big-o-notation/01-day-2--introduction-to-space-complexity)
 
 ### Week 5: Big O Continued
 
-- [ ] [Days 1 to 2: Implement a Stack Class](./06-week-5--big-o-continued/00-days-1-to-2--implement-a-stack-class)
-- [ ] [Days 3 to 4: Implement a Queue Class](./06-week-5--big-o-continued/01-days-3-to-4--implement-a-queue-class)
-- [ ] [Day 5: Implement a Set](./06-week-5--big-o-continued/02-day-5--implement-a-set)
+- [x] [Days 1 to 2: Implement a Stack Class](./06-week-5--big-o-continued/00-days-1-to-2--implement-a-stack-class)
+- [x] [Days 3 to 4: Implement a Queue Class](./06-week-5--big-o-continued/01-days-3-to-4--implement-a-queue-class)
+- [x] [Day 5: Implement a Set](./06-week-5--big-o-continued/02-day-5--implement-a-set)
 
 ### Week 6: Foundational Data Structures
 
-- [ ] [Days 1 to 2: Implement a Linked List](./07-week-6--foundational-data-structures/00-days-1-to-2--implement-a-linked-list)
+- [x] [Days 1 to 2: Implement a Linked List](./07-week-6--foundational-data-structures/00-days-1-to-2--implement-a-linked-list)
 - [ ] [Day 3: Underneath Arrays](./07-week-6--foundational-data-structures/01-day-3--underneath-arrays)
 - [ ] [Day 4: Underneath Hashes](./07-week-6--foundational-data-structures/02-day-4--underneath-hashes)
 - [ ] [Bonus Algorithm: Recursive String Reverse](./07-week-6--foundational-data-structures/03-bonus-algorithm--recursive-string-reverse)
