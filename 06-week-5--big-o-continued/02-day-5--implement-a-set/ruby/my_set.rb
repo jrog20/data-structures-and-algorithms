@@ -3,13 +3,14 @@ class MySet
   
   def initialize(iterable = nil)
     # throw an error if called with anything other than string, array or nothing
-    raise "You must initiate with and empty set, a string, or an array" unless 
+    raise "You must initiate with an empty set, a string, or an array" unless 
       iterable.nil? || iterable.kind_of?(String) || iterable.kind_of?(Array)
     
     @data = {}
     
     # if an iterable is provided only its unique values should be in data
     # strings and arrays will need to be broken down by their elements/characters
+    # Use a value of `true` for each key: `{ dog: true }`.
     unless iterable.nil?
       items = iterable.kind_of?(String) ? iterable.split("") : iterable
       items.each { |item| @data[item] = true }
@@ -23,6 +24,7 @@ class MySet
 
   # add an item to MySet as is
   # return the MySet instance
+  # Use a value of `true` for each key: `{ dog: true }`.
   def add(item)
     @data[item] = true
     self
