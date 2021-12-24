@@ -50,18 +50,33 @@ class LinkedList
   end
 end
 
+# When instantiating a new `Node`, the arguments in order should be: `value`, `next`.
+
+# ```
+# node = new Node()
+# node.value
+# => null or nil
+# node.next
+# => null or nil
+
+# node = new Node('hi', new Node('bye'))
+# node.value
+# => 'hi'
+# node.next
+# => Instance of Node with value of 'bye'
+# ```
+
 class Node
   # next is a reserved word in Ruby, so we'll use next_node instead 
   # just to keep things clear
   attr_accessor :value, :next_node
 
-  def initialize()
+  def initialize(value = nil, next_node = nil)
+    @value = value
+    @next_node = next_node
   end
 end
 
 if __FILE__ == $PROGRAM_NAME
   # Don't forget to add your tests!
 end
-
-# Please add your pseudocode to this file
-# And a written explanation of your solution
