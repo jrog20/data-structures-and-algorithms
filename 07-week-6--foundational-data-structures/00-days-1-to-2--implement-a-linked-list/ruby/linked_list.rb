@@ -1,7 +1,19 @@
 class LinkedList
   attr_accessor :head
 
-  def initialize()
+  # ```
+  # node = new Node()
+  # list = new LinkedList(node)
+  # list.head
+  # => Instance of Node
+
+  # emptyList = new LinkedList()
+  # list.head
+  # => null or nil
+  # ```
+
+  def initialize(head = nil)
+    @head = head
   end
 
   def iterate()
@@ -68,7 +80,6 @@ end
 
 class Node
   # next is a reserved word in Ruby, so we'll use next_node instead 
-  # just to keep things clear
   attr_accessor :value, :next_node
 
   def initialize(value = nil, next_node = nil)
@@ -78,5 +89,9 @@ class Node
 end
 
 if __FILE__ == $PROGRAM_NAME
-  # Don't forget to add your tests!
+  head = Node.new('hi again', Node.new('but why?'))
+  list = LinkedList.new(head)
+  puts list.head.value
+  puts list.head.next_node.value
+  puts list.head.next_node.next_node
 end
