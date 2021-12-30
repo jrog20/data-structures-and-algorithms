@@ -16,7 +16,15 @@ class LinkedList
     @head = head
   end
 
-  def iterate()
+  def iterate
+    count = 0
+    temp = @head
+    until temp.nil?
+      yield(temp, count)      
+      temp = temp.next_node
+      count += 1
+    end
+    @head
   end
 
   # print each node's value on its own line
