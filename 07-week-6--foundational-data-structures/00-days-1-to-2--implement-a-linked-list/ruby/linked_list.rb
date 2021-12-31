@@ -16,11 +16,12 @@ class LinkedList
     @head = head
   end
 
+  # Yield is a Ruby keyword that calls a block when you use it.
   def iterate
     count = 0
     temp = @head
     until temp.nil?
-      yield(temp, count)      
+      yield(temp, count)
       temp = temp.next_node
       count += 1
     end
@@ -28,17 +29,26 @@ class LinkedList
   end
 
   # print each node's value on its own line
-  # use your iterate method to be DRY! Don't get caught in the code rain, brrr.
+  # use the iterate method to be DRY!
   def print
+    iterate { |node| puts node.value } 
   end
 
   # find the node with the target value and return it
-  # if not found return nil, use your iterate method to be DRY!
+  # if not found return nil, use the iterate method to be DRY!
   def find(target)
+    iterate do |node|
+      return node if node.value == target
+    end
+    nil
   end
 
   # add the node to the start of the list, no nodes should be removed
   def add_first(node)
+    # make the current head == the next node
+    node.next_node = @head
+    # make this new node == the head
+    @head = node
   end
 
   # add node to end of list, no nodes should be removed
