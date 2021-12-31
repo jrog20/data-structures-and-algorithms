@@ -52,18 +52,41 @@ class LinkedList
   end
 
   # add node to end of list, no nodes should be removed
-  # you may wish to use the iterate method
   def add_last(node)
+    # check to see if there are any nodes, if not, this node == head; return to end
+    if @head.nil?
+      @head = node
+      return
+    end
+    # iterate through the nodes until we find the last node. Add this node as the next node
+    iterate do |current_node|
+      if current_node.next_node.nil?
+        current_node.next_node = node
+        return
+      end
+    end
   end
 
   # remove the first Node in the list and update head
   # and return the removed node
   def remove_first
+    # remove the first Node
+    old_head = @head
+    # update head
+    @head = @head.next_node unless @head.nil?
+    # return the removed node
+    old_head
   end
 
   # remove the tail node, iterate may be helpful
   # return the node you just removed
   def remove_last
+    # check to see if there is more than one node, if not, remove first
+    return remove_first if @head.nil? || @head.next_node.nil?
+
+    iterate do |node|
+      
+    end
   end
 
   # replace the node at the given index with the given node
