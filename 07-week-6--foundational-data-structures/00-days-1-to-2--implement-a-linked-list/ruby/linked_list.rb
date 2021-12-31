@@ -78,29 +78,77 @@ class LinkedList
     old_head
   end
 
-  # remove the tail node, iterate may be helpful
-  # return the node you just removed
+  # remove the tail node
   def remove_last
     # check to see if there is more than one node, if not, remove first
     return remove_first if @head.nil? || @head.next_node.nil?
-
+    # iterate through the nodes until you find the tail
     iterate do |node|
-      
+      if node.next_node.next_node.nil?
+        old_tail = node.next_node
+        node.next_node = nil
+        # return the node that was just removed
+        return old_tail
+      end
     end
   end
 
   # replace the node at the given index with the given node
   def replace(idx, node)
+    # if the given index is the first index, add to front
+    if idx.zero?
+      remove_first
+      add_first(node)
+      return node
+    end
+
+    iterate do |curr_node, count|
+      if count == idx - 1
+        node.next_node = curr_node.next_node.next_node
+        curr_node.next_node = node
+        return node
+      end
+    end
   end
 
   # insert the node at the given index
   # no existing nodes should be removed or replaced
   def insert(idx, node)
+    # if the given index is the first index, add to front
+    if idx.zero?
+      add_first(node)
+      return
+    end
+
+    iterate do |curr_node, count|
+      if count == idx - 1
+        old_next = curr_node.next_node
+        curr_node.next_node = node
+        node.next_node = old_next
+        return
+      end
+    end
   end
 
   # remove the node at the given index, and return it
   def remove(idx)
+    if idx.zero?
+      return remove_first
+    end
+
+    iterate do |node, count|
+      if count == idx - 1
+        old_node = node.next_node
+        node.next_node = node.next_node.next_node
+        return old_node
+      end
+    end
   end
+
+  def clear
+    @head = nil
+  end
+
 end
 
 # When instantiating a new `Node`, the arguments in order should be: `value`, `next`.
