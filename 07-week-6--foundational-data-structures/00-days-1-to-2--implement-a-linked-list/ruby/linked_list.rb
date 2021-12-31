@@ -21,6 +21,7 @@ class LinkedList
     count = 0
     temp = @head
     until temp.nil?
+      # The code inside the block will replace the yield keyword in the method definition
       yield(temp, count)
       temp = temp.next_node
       count += 1
@@ -29,13 +30,12 @@ class LinkedList
   end
 
   # print each node's value on its own line
-  # use the iterate method to be DRY!
   def print
     iterate { |node| puts node.value } 
   end
 
   # find the node with the target value and return it
-  # if not found return nil, use the iterate method to be DRY!
+  # if not found return nil
   def find(target)
     iterate do |node|
       return node if node.value == target
@@ -178,9 +178,7 @@ class Node
 end
 
 if __FILE__ == $PROGRAM_NAME
-  head = Node.new('hi again', Node.new('but why?'))
+  head = Node.new('one', Node.new('two', Node.new('three', Node.new('four'))))
   list = LinkedList.new(head)
-  puts list.head.value
-  puts list.head.next_node.value
-  puts list.head.next_node.next_node
+  puts list.print
 end
