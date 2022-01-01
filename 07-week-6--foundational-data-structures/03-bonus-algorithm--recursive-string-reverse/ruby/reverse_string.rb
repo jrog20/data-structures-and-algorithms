@@ -13,10 +13,18 @@ if __FILE__ == $PROGRAM_NAME
   puts "Expecting: 'ybabtac'"
   puts "=>", reverse_string('catbaby')
 
-  # Don't forget to add your own!
+  puts
+
+  puts "Expecting: 'empty string'"
+  puts "=>", reverse_string('')
+
+  puts
+
+  puts "Expecting: 'ecaF'"
+  puts "=>", reverse_string('Face')
 end
 
-# pseudocode to this file
+# pseudocode
 # return string if length is 0 or 1
 # return reverse_string(string - 0th character) + 0th character
 
