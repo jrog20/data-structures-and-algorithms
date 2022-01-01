@@ -1,5 +1,7 @@
 def reverse_string(str)
-  # type your code in here
+  return str if str.length < 2
+
+  return reverse_string(str[1..-1]) + str[0]
 end
 
 if __FILE__ == $PROGRAM_NAME
@@ -14,5 +16,9 @@ if __FILE__ == $PROGRAM_NAME
   # Don't forget to add your own!
 end
 
-# Please add your pseudocode to this file
-# And a written explanation of your solution
+# pseudocode to this file
+# return string if length is 0 or 1
+# return reverse_string(string - 0th character) + 0th character
+
+# written explanation of solution
+# Base case => we want to return if the string is empty or length == 1.
