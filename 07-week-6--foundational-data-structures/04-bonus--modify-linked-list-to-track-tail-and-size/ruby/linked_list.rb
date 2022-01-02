@@ -4,6 +4,22 @@ class LinkedList
 
   def initialize(head = nil)
     @head = head
+    @tail = tail
+    @size = 0
+    set_size_and_tail
+  end
+
+  def set_size_and_tail
+    @size = 0
+
+    iterate do |node|
+      @tail = node
+      update_size('+')
+    end
+  end
+
+  def update_size(operation)
+    operation === '+' ? @size += 1 : @size -= 1
   end
 
   def iterate
@@ -32,37 +48,52 @@ class LinkedList
   end
 
   def add_first(node)
+    if @head.nil?
+      @tail = node
+    end
+
     node.next_node = @head
     @head = node
+
+    update_size('+')
   end
 
   def add_last(node)
     if @head.nil?
-      @head = node
+      add_first(node)
       return
     end
 
-    iterate do |curr_node|
-      if curr_node.next_node.nil?
-        curr_node.next_node = node
-        return
-      end
-    end
+    @tail.next_node = node
+    @tail = node
+    update_size('+')
   end
 
   def remove_first
     old_head = @head
-    @head = @head.next_node unless @head.nil?
+
+    unless @head.nil?
+      @head = @head.next_node
+      update_size('-')
+    end
+    
+    if @head.nil?
+      @tail = nil
+    end
+
     old_head
   end
 
   def remove_last
     return remove_first if @head.nil? || @head.next_node.nil?
 
+    update_size('-')
+
     iterate do |node|
       if node.next_node.next_node.nil?
         old_tail = node.next_node
         node.next_node = nil
+        @tail = node
         return old_tail
       end
     end
@@ -79,6 +110,7 @@ class LinkedList
       if count == idx - 1
         node.next_node = curr_node.next_node.next_node
         curr_node.next_node = node
+        @tail = node if node.next_node.nil?
         return node
       end
     end
@@ -90,11 +122,14 @@ class LinkedList
       return
     end
 
+    update_size("+")
+
     iterate do |curr_node, count|
       if count == idx - 1
         old_next = curr_node.next_node
         curr_node.next_node = node
         node.next_node = old_next
+        @tail = node if node.next_node.nil?
         return
       end
     end
@@ -105,10 +140,13 @@ class LinkedList
       return remove_first
     end
 
+    update_size("-")
+
     iterate do |node, count|
       if count == idx - 1
         old_node = node.next_node
         node.next_node = node.next_node.next_node
+        @tail = node if node.next_node.nil?
         return old_node
       end
     end
@@ -116,6 +154,8 @@ class LinkedList
 
   def clear
     @head = nil
+    @tail = nil
+    @size = 0
   end
 end
 
@@ -134,5 +174,3 @@ if __FILE__ == $PROGRAM_NAME
   empty_list = LinkedList.new
 end
 
-# Please add your pseudocode to this file
-# And a written explanation of your solution
