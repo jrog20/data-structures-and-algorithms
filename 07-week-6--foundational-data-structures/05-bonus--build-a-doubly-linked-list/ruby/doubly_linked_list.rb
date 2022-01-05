@@ -32,6 +32,8 @@ class DoublyLinkedList
 
   def add_first(node)
     node.next_node = @head
+    # modify to update prev_node
+    @head.prev_node = node unless @head.nil?
     @head = node
   end
 
@@ -44,6 +46,8 @@ class DoublyLinkedList
     iterate do |curr_node|
       if curr_node.next_node.nil?
         curr_node.next_node = node
+        # modify to update prev_node
+        node.prev_node = curr_node
         return
       end
     end
@@ -52,6 +56,8 @@ class DoublyLinkedList
   def remove_first
     old_head = @head
     @head = @head.next_node unless @head.nil?
+    # modify to update prev_node
+    @head.prev_node = nil unless @head.nil?
     old_head
   end
 
@@ -78,6 +84,11 @@ class DoublyLinkedList
       if count == idx - 1
         node.next_node = curr_node.next_node.next_node
         curr_node.next_node = node
+        # modify to update prev_node
+        node.prev_node = curr_node
+        unless curr_node.next_node.next_node.nil?
+          curr_node.next_node.next_node.prev_node = node
+        end
         return node
       end
     end
@@ -94,6 +105,9 @@ class DoublyLinkedList
         old_next = curr_node.next_node
         curr_node.next_node = node
         node.next_node = old_next
+        # modify to update prev_node
+        old_next.prev_node = node unless old_next.nil?
+        node.prev_node = curr_node
         return
       end
     end
@@ -108,6 +122,8 @@ class DoublyLinkedList
       if count == idx - 1
         old_node = node.next_node
         node.next_node = node.next_node.next_node
+        # modify to update prev_node
+        node.next_node.prev_node = node unless node.next_node.nil?
         return old_node
       end
     end
@@ -121,9 +137,10 @@ end
 class Node
   attr_accessor :value, :next_node, :prev_node
 
-  def initialize(value = nil, next_node = nil)
+  def initialize(value = nil, next_node = nil, prev_node = nil)
     @value = value
     @next_node = next_node
+    @prev_node = prev_node
   end
 end
 
